@@ -1,9 +1,30 @@
-import styled from "styled-components";
+import React from "react";
 
-export const Container = styled.div`
-    grid-area: CT;
 
-    color: ${props => props.theme.colors.white};
-    background-color: ${props => props.theme.colors.primary};
-    padding: 25px;
-`;
+import { TitleContainer, Controllers, Container } from './styles'
+
+interface iContentHeaderProps {
+    title: string;
+    lineColor: string;
+    children: React.ReactNode;
+}
+
+const ContentHeader: React.FC<iContentHeaderProps> = ({
+    title,
+    lineColor,
+    children,
+}) => {
+
+    return (
+        <Container>
+            <TitleContainer lineColor={lineColor}>
+                <h1>{title}</h1>
+            </TitleContainer>
+            <Controllers>
+                {children}
+            </Controllers>
+        </Container>
+    )
+}
+
+export default ContentHeader

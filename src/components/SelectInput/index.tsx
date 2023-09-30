@@ -1,20 +1,28 @@
-import styled from "styled-components";
+import React, { ReactNode } from "react";
 
-export const Container = styled.div`
-    grid-area: MH;
+import { Container } from './styles'
 
-    background-color: ${props => props.theme.colors.secondary};
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 10px;
-    border-bottom: 1px solid ${props => props.theme.colors.gray};
-`;
 
-export const Profile = styled.div`
-    color: ${props => props.theme.colors.white};
-`;
-
-export const Welcome = styled.h3``;
-export const UserName = styled.span``;
+  interface iSelectInputProps {
+    options: {
+        value: string | number;
+        label: string | number;
+    }[]
+  }
+   
+  const SelectInput: React.FC<iSelectInputProps> = ({ options }) => {
+    return (
+      <Container>
+        <select>
+            {
+                options.map(option => (
+                    <option value={option.value}>{option.label}</option>
+                ))
+            }
+        </select>
+      </Container>
+    )
+  }
+   
+  export default SelectInput;
