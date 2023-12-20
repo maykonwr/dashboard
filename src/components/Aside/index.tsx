@@ -15,8 +15,8 @@ import {
     LogImg,
     Title,
     MenuContainer,
-    MenuItemLink
  } from './styles'
+import { Link } from "react-router-dom";
 
 const Aside: React.FC = () => {
     return (
@@ -27,22 +27,22 @@ const Aside: React.FC = () => {
             </Header>
 
             <MenuContainer>
-                <MenuItemLink href="#">
+                <Link to="/dashboard">
                     <MdDashboard />
                     Dashboard
-                </MenuItemLink>
-                <MenuItemLink href="#">
+                </Link>
+                <Link to="/list/entry-balance">
                     <MdArrowUpward />
                     Entradas
-                </MenuItemLink>
-                <MenuItemLink href="#">
+                </Link>
+                <Link to="/list/exit-balance">
                     <MdArrowDownward />
                     Saídas
-                </MenuItemLink>
-                <MenuItemLink href="#">
+                </Link>
+                <Link to="#">
                     <MdExitToApp />
                     Sair
-                </MenuItemLink>
+                </Link>
             </MenuContainer>
         </Container>
     )
