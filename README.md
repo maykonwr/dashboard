@@ -54,7 +54,7 @@ How to start your project
 
 ```bash
 cd dashboard
-pnpm run dev
+npm start
 ```
 
 <h2 id="author">👨🏻‍💻 Author</h2>
